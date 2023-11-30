@@ -19,6 +19,9 @@ app.use("/api", taskRouter);
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
 
+const logRoutes = require("./routes/logOfficer.routes");
+app.use("/", logRoutes);
+
 require("./error-handling")(app);
 
 module.exports = app;

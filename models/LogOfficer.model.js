@@ -17,7 +17,6 @@ const logOffSchema = new Schema(
     },
     role: {
       type: String,
-      required: true,
       default: 'Logistic Officer',
     },   
     passwordHash: {
