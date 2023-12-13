@@ -10,8 +10,8 @@ require("./config")(app);
 const allRoutes = require("./routes");
 app.use("/api", allRoutes);
 
-const projectRouter = require("./routes/project.routes");
-app.use("/api", projectRouter);
+const partnerRouter = require("./routes/partners.routes");
+app.use("/api", partnerRouter);
 
 const taskRouter = require("./routes/task.routes");
 app.use("/api", taskRouter);
@@ -24,6 +24,7 @@ app.use("/", logRoutes);
 
 const auth = require("./routes/auth.routes");
 app.use("/", auth);
+
 
 require("./error-handling")(app);
 
