@@ -16,11 +16,14 @@ app.use("/api", projectRouter);
 const taskRouter = require("./routes/task.routes");
 app.use("/api", taskRouter);
 
-const authRoutes = require("./routes/auth.routes");
-app.use("/auth", authRoutes);
+const authRoutes = require("./routes/sales.routes");
+app.use("/", authRoutes);
 
 const logRoutes = require("./routes/logOfficer.routes");
 app.use("/", logRoutes);
+
+const auth = require("./routes/auth.routes");
+app.use("/", auth);
 
 require("./error-handling")(app);
 

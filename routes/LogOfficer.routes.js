@@ -59,10 +59,10 @@ console.log(email)
 
       // Deconstruct the newly created LogOfficer object to omit the password
       // We should never expose passwords publicly
-      const { email, name, _id, role } = createdLogOfficer;
+      const { email, username, _id, role } = createdLogOfficer;
     
       // Create a new object that doesn't expose the password
-      const user = { email, name, _id, role };
+      const user = { email, username, _id, role };
 
       // Send a json response containing the LogOfficer object
       res.status(201).json({ logOfficer: user });
@@ -99,10 +99,10 @@ router.post('/logistics/login', (req, res, next) => {
 
       if (passwordCorrect) {
         // Deconstruct the user object to omit the password
-        const { _id, email, name , role} = foundLogOfficer;
+        const { _id, email, username , role} = foundLogOfficer;
         
         // Create an object that will be set as the token payload
-        const payload = { _id, email, name,role };
+        const payload = { _id, email, username,role };
 
         // Create and sign the token
         const authToken = jwt.sign( 
