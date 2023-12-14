@@ -8,7 +8,6 @@ const orderSchema = new Schema({
   good: [
     {
       name: String,
-      price: Number,
       weight: Number,
     }
   ],
